@@ -42,25 +42,7 @@
 
 
 
-   // Burger Menu
-	var burgerMenu = function() {
-
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
-
-			event.preventDefault();
-
-			if ( $('#ftco-nav').is(':visible') ) {
-				$(this).removeClass('active');
-			} else {
-				$(this).addClass('active');	
-			}
-
-			
-			
-		});
-
-	};
-	burgerMenu();
+   // Burger Menu - Removed custom implementation to use Bootstrap's built-in navbar collapse
 
 
 	var onePageClick = function() {
