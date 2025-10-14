@@ -960,8 +960,10 @@ and PostgreSQL</p>
       background: rgba(0, 0, 0, 0.95);
       padding: 20px;
       border-radius: 10px;
-      margin-top: 10px;
+      margin-top: 15px;
+      margin-right: 70px; /* Leave space for theme toggle button */
       backdrop-filter: blur(10px);
+      max-width: calc(100% - 90px); /* Ensure it doesn't overlap with theme button */
     }
 
     .navbar-nav .nav-item {
@@ -1000,39 +1002,71 @@ and PostgreSQL</p>
         transform: translateY(0);
       }
     }
+
+    /* Light theme mobile navbar */
+    .light-theme .navbar-nav {
+      background: rgba(248, 249, 250, 0.98) !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      margin-right: 70px;
+      max-width: calc(100% - 90px);
+    }
+
+    .light-theme .navbar-nav .nav-link {
+      color: #212529 !important;
+    }
+
+    .light-theme .navbar-nav .nav-link:hover {
+      background: rgba(0, 123, 255, 0.1) !important;
+      color: #007bff !important;
+    }
   }
 
   /* Responsive theme toggle */
   @media (max-width: 768px) {
     .theme-toggle-btn-fixed {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       font-size: 1.4rem;
-      top: 15px;
-      right: 15px;
+      top: 20px;
+      right: 20px;
       border-width: 2px;
+      z-index: 1001;
     }
   }
 
   @media (max-width: 576px) {
     .theme-toggle-btn-fixed {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       font-size: 1.3rem;
-      top: 12px;
-      right: 12px;
+      top: 18px;
+      right: 18px;
       border-width: 2px;
+      z-index: 1001;
     }
   }
 
   @media (max-width: 480px) {
     .theme-toggle-btn-fixed {
-      width: 42px;
-      height: 42px;
+      width: 46px;
+      height: 46px;
       font-size: 1.2rem;
-      top: 10px;
-      right: 10px;
+      top: 15px;
+      right: 15px;
       border-width: 2px;
+      z-index: 1001;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .theme-toggle-btn-fixed {
+      width: 44px;
+      height: 44px;
+      font-size: 1.1rem;
+      top: 12px;
+      right: 12px;
+      border-width: 2px;
+      z-index: 1001;
     }
   }
 </style>
