@@ -1225,12 +1225,18 @@
 
   /* Responsive theme toggle */
   @media (max-width: 768px) {
+    .navbar-toggler {
+      position: relative;
+      z-index: 2002;
+      margin-right: 0;
+    }
+
     .theme-toggle-btn-fixed {
-      width: 50px;
-      height: 50px;
-      font-size: 1.4rem;
-      top: 20px;
-      right: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+      top: 18px;
+      right: 72px;
       border-width: 2px;
       z-index: 2001;
       background: rgba(0, 0, 0, 0.72);
@@ -1245,11 +1251,11 @@
 
   @media (max-width: 576px) {
     .theme-toggle-btn-fixed {
-      width: 48px;
-      height: 48px;
-      font-size: 1.3rem;
-      top: 18px;
-      right: 18px;
+      width: 38px;
+      height: 38px;
+      font-size: 0.95rem;
+      top: 17px;
+      right: 66px;
       border-width: 2px;
       z-index: 2001;
     }
@@ -1257,11 +1263,11 @@
 
   @media (max-width: 480px) {
     .theme-toggle-btn-fixed {
-      width: 46px;
-      height: 46px;
-      font-size: 1.2rem;
+      width: 36px;
+      height: 36px;
+      font-size: 0.9rem;
       top: 15px;
-      right: 15px;
+      right: 60px;
       border-width: 2px;
       z-index: 2001;
     }
@@ -1269,11 +1275,11 @@
 
   @media (max-width: 360px) {
     .theme-toggle-btn-fixed {
-      width: 44px;
-      height: 44px;
-      font-size: 1.1rem;
-      top: 12px;
-      right: 12px;
+      width: 34px;
+      height: 34px;
+      font-size: 0.85rem;
+      top: 13px;
+      right: 56px;
       border-width: 2px;
       z-index: 2001;
     }
