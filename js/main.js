@@ -46,23 +46,21 @@
 
 
 	var onePageClick = function() {
-
-
 		$(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
-	    event.preventDefault();
-
-	    var href = $.attr(this, 'href');
-
-	    $('html, body').animate({
-	        scrollTop: $($.attr(this, 'href')).offset().top - 70
-	    }, 500, function() {
-	    	// window.location.hash = href;
-	    });
+			event.preventDefault();
+			var $t = $($.attr(this, 'href'));
+			if (!$t.length) return;
+			var off = $t.offset();
+			if (!off) return;
+			$('html, body').animate({
+				scrollTop: Math.max(off.top - 70, 0)
+			}, 500);
 		});
-
 	};
 
-	onePageClick();
+	if (!window.__portfolioOnePageNav) {
+		onePageClick();
+	}
 	
 
 	var carousel = function() {

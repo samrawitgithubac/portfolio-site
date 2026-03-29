@@ -1144,9 +1144,13 @@
 
   /* Mobile Navigation Improvements */
   @media (max-width: 991px) {
+    /* Leave the drawer strip uncovered so taps always hit links (not the dim layer) */
     .mobile-menu-backdrop {
       position: fixed;
-      inset: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: min(320px, 84vw);
       background: rgba(0, 0, 0, 0.45);
       opacity: 0;
       visibility: hidden;
@@ -1193,6 +1197,11 @@
       border-radius: 10px;
       transition: all 0.3s ease;
       font-size: 1.05rem;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .navbar-nav .nav-link:hover {
@@ -1794,6 +1803,7 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
   
+  <script>window.__portfolioOnePageNav = true;</script>
   <script src="js/main.js"></script>
 
   <!-- Theme Toggle JavaScript -->
@@ -1857,19 +1867,22 @@
         }
       });
 
+    });
+
+    $(function() {
       const mobileMenu = $('#ftco-nav');
       const mobileMenuBackdrop = $('#mobile-menu-backdrop');
       const menuToggle = $('.js-fh5co-nav-toggle');
 
       function openMobileMenu() {
-        mobileMenu.addClass('menu-opened');
+        mobileMenu.addClass('menu-opened show');
         mobileMenuBackdrop.addClass('active');
         $('body').addClass('menu-open');
         menuToggle.attr('aria-expanded', 'true');
       }
 
       function closeMobileMenu() {
-        mobileMenu.removeClass('menu-opened');
+        mobileMenu.removeClass('menu-opened show');
         mobileMenuBackdrop.removeClass('active');
         $('body').removeClass('menu-open');
         menuToggle.attr('aria-expanded', 'false');
@@ -1883,8 +1896,7 @@
         }
       }
 
-      // Mobile menu improvements
-      $('.js-fh5co-nav-toggle').on('click', function(e){
+      $('.js-fh5co-nav-toggle').on('click', function(e) {
         if ($(window).width() < 992) {
           e.preventDefault();
           e.stopPropagation();
@@ -1896,29 +1908,29 @@
         closeMobileMenu();
       });
 
-      // Handle same-page nav links consistently
-      $('.navbar-nav .nav-link').on('click', function(e){
-        const targetSelector = $(this).attr('href');
-        if (!targetSelector || !targetSelector.startsWith('#')) return;
-
-        const target = $(targetSelector);
-        if (!target.length) return;
+      $(document).on('click', '#ftco-nav a[href^="#"]', function(e) {
+        const href = $(this).attr('href');
+        if (!href) return;
+        const $target = $(href);
+        if (!$target.length) return;
+        const off = $target.offset();
+        if (!off) return;
 
         e.preventDefault();
+        e.stopPropagation();
 
-        const navbarHeight = $('.navbar').outerHeight() || 0;
-        const targetTop = Math.max(target.offset().top - navbarHeight, 0);
+        const navbarHeight = $('#ftco-navbar').outerHeight() || 0;
+        const targetTop = Math.max(off.top - navbarHeight, 0);
 
-        $('html, body').animate({ scrollTop: targetTop }, 450);
+        $('html, body').stop(true).animate({ scrollTop: targetTop }, 450);
 
         if ($(window).width() < 992) {
           closeMobileMenu();
         }
       });
 
-      // Close mobile menu when clicking outside
-      $(document).on('click', function(e){
-        if ($(window).width() < 992 && !$(e.target).closest('.navbar, #mobile-menu-backdrop').length) {
+      $(document).on('click', function(e) {
+        if ($(window).width() < 992 && !$(e.target).closest('#ftco-navbar, #mobile-menu-backdrop').length) {
           closeMobileMenu();
         }
       });

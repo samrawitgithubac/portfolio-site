@@ -2507,6 +2507,13 @@ input[type="button"].btn-block {
 .collapse:not(.show) {
   display: none; }
 
+/* Portfolio mobile drawer: keep panel visible when custom .menu-opened is used (Bootstrap collapse hides without .show) */
+@media (max-width: 991.98px) {
+  #ftco-nav.navbar-collapse.menu-opened {
+    display: block !important;
+  }
+}
+
 .collapsing {
   position: relative;
   height: 0;
