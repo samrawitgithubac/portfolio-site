@@ -1149,9 +1149,10 @@
       padding: 20px;
       border-radius: 10px;
       margin-top: 15px;
-      margin-right: 70px; /* Leave space for theme toggle button */
+      margin-right: 0;
       backdrop-filter: blur(10px);
-      max-width: calc(100% - 90px); /* Ensure it doesn't overlap with theme button */
+      max-width: 100%;
+      width: 100%;
     }
 
     .navbar-nav .nav-item {
@@ -1172,10 +1173,9 @@
     }
 
     .navbar-collapse {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
+      position: static;
+      width: 100%;
+      padding-top: 8px;
       z-index: 999;
       animation: slideDown 0.3s ease-out;
     }
@@ -1196,8 +1196,9 @@
       background: rgba(255, 255, 255, 0.99) !important;
       border: 1px solid rgba(0, 0, 0, 0.12) !important;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
-      margin-right: 70px;
-      max-width: calc(100% - 90px);
+      margin-right: 0;
+      max-width: 100%;
+      width: 100%;
     }
 
     .light-theme .navbar-collapse {
