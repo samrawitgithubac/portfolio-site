@@ -1165,6 +1165,11 @@
       overflow: hidden;
     }
 
+    /* Navbar is z-index 1030 in style.css; backdrop is 1190 — backdrop was stealing all taps */
+    body.menu-open #ftco-navbar.ftco-navbar-light {
+      z-index: 1300 !important;
+    }
+
     .navbar-nav {
       background: rgba(0, 0, 0, 0.95);
       padding: 96px 22px 28px;
