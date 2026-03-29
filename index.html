@@ -62,7 +62,6 @@
 	          <div class="row h-100 d-flex no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
 	           <div class="col-12 col-md-8 col-lg-6 d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 	           	<div class="text text-center">
-	           		<span class="subheading">Full-Stack &amp; Mobile Developer</span>
 	              <h1 class="mb-4 mt-3">
 	                <span class="hero-intro">Hi, I'm</span>
 	                <span class="hero-name">Samrawit Haileyesus</span>
@@ -1342,18 +1341,10 @@
     padding: 0 18px;
   }
 
-  #home-section .subheading {
-    display: inline-block;
-    margin-bottom: 14px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #ffd700;
-    font-weight: 600;
-  }
-
   #home-section h1 {
     font-size: clamp(2rem, 4vw, 3.3rem) !important;
     line-height: 1.06;
+    margin-top: 0 !important;
     margin-bottom: 18px !important;
     color: #ffffff !important;
   }
@@ -1554,7 +1545,7 @@
     #home-section {
       min-height: 100vh !important;
       height: auto !important;
-      padding: 110px 0 70px !important;
+      padding: 76px 0 56px !important;
     }
 
     #about-section .heading-section > div {
@@ -1883,8 +1874,21 @@
         mobileMenu.collapse('hide');
       });
 
-      // Close mobile menu when clicking on a link
-      $('.navbar-nav .nav-link').on('click', function(){
+      // Handle same-page nav links consistently
+      $('.navbar-nav .nav-link').on('click', function(e){
+        const targetSelector = $(this).attr('href');
+        if (!targetSelector || !targetSelector.startsWith('#')) return;
+
+        const target = $(targetSelector);
+        if (!target.length) return;
+
+        e.preventDefault();
+
+        const navbarHeight = $('.navbar').outerHeight() || 0;
+        const targetTop = Math.max(target.offset().top - navbarHeight, 0);
+
+        $('html, body').animate({ scrollTop: targetTop }, 450);
+
         if ($(window).width() < 992) {
           mobileMenu.collapse('hide');
         }
