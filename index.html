@@ -54,6 +54,7 @@
 	      </div>
 	    </div>
 	  </nav>
+    <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
 	  <section id="home-section" class="hero" style="background: #000000; height: 100vh; width: 100%; display: flex; align-items: center; position: relative;">
 	  <div class="home-slider owl-carousel" style="width: 100%; height: 100%;">
 	      <div class="slider-item">
@@ -1144,27 +1145,46 @@
 
   /* Mobile Navigation Improvements */
   @media (max-width: 991px) {
+    .mobile-menu-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1190;
+    }
+
+    .mobile-menu-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
     .navbar-nav {
       background: rgba(0, 0, 0, 0.95);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 15px;
+      padding: 96px 22px 28px;
+      border-radius: 0;
+      margin-top: 0;
       margin-right: 0;
       backdrop-filter: blur(10px);
       max-width: 100%;
       width: 100%;
+      min-height: 100vh;
+      overflow-y: auto;
     }
 
     .navbar-nav .nav-item {
-      margin: 10px 0;
-      text-align: center;
+      margin: 8px 0;
+      text-align: left;
     }
 
     .navbar-nav .nav-link {
-      padding: 15px 20px;
-      border-radius: 8px;
+      padding: 14px 16px;
+      border-radius: 10px;
       transition: all 0.3s ease;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     .navbar-nav .nav-link:hover {
@@ -1173,22 +1193,32 @@
     }
 
     .navbar-collapse {
-      position: static;
-      width: 100%;
-      padding-top: 8px;
-      z-index: 999;
-      animation: slideDown 0.3s ease-out;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(320px, 84vw);
+      height: 100vh;
+      padding-top: 0;
+      z-index: 1200;
+      display: block !important;
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     }
 
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .navbar-collapse.collapsing {
+      height: 100vh !important;
+      transition: transform 0.3s ease, opacity 0.3s ease !important;
     }
 
     /* Light theme mobile navbar */
@@ -1826,22 +1856,44 @@
         }
       });
 
+      const mobileMenu = $('#ftco-nav');
+      const mobileMenuBackdrop = $('#mobile-menu-backdrop');
+
       // Mobile menu improvements
       $('.js-fh5co-nav-toggle').on('click', function(e){
-        $('.navbar-collapse').collapse('toggle');
+        if ($(window).width() < 992) {
+          e.stopPropagation();
+          mobileMenu.collapse('toggle');
+        }
+      });
+
+      mobileMenu.on('shown.bs.collapse', function() {
+        if ($(window).width() < 992) {
+          mobileMenuBackdrop.addClass('active');
+          $('body').addClass('menu-open');
+        }
+      });
+
+      mobileMenu.on('hidden.bs.collapse', function() {
+        mobileMenuBackdrop.removeClass('active');
+        $('body').removeClass('menu-open');
+      });
+
+      mobileMenuBackdrop.on('click', function() {
+        mobileMenu.collapse('hide');
       });
 
       // Close mobile menu when clicking on a link
       $('.navbar-nav .nav-link').on('click', function(){
         if ($(window).width() < 992) {
-          $('.navbar-collapse').collapse('hide');
+          mobileMenu.collapse('hide');
         }
       });
 
       // Close mobile menu when clicking outside
       $(document).on('click', function(e){
         if (!$(e.target).closest('.navbar').length) {
-          $('.navbar-collapse').collapse('hide');
+          mobileMenu.collapse('hide');
         }
       });
     });
