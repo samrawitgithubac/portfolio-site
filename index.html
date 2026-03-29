@@ -37,7 +37,7 @@
      <div class="container">
        <a class="navbar-brand" href="index.html">Samrawit</a>
 
-       <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="oi oi-menu"></span>
        </button>
 
@@ -1161,6 +1161,10 @@
       pointer-events: auto;
     }
 
+    body.menu-open {
+      overflow: hidden;
+    }
+
     .navbar-nav {
       background: rgba(0, 0, 0, 0.95);
       padding: 96px 22px 28px;
@@ -1208,7 +1212,8 @@
     }
 
     .navbar-collapse.show,
-    .navbar-collapse.collapsing {
+    .navbar-collapse.collapsing,
+    .navbar-collapse.menu-opened {
       transform: translateX(0);
       opacity: 1;
       visibility: visible;
@@ -1849,29 +1854,41 @@
 
       const mobileMenu = $('#ftco-nav');
       const mobileMenuBackdrop = $('#mobile-menu-backdrop');
+      const menuToggle = $('.js-fh5co-nav-toggle');
+
+      function openMobileMenu() {
+        mobileMenu.addClass('menu-opened');
+        mobileMenuBackdrop.addClass('active');
+        $('body').addClass('menu-open');
+        menuToggle.attr('aria-expanded', 'true');
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.removeClass('menu-opened');
+        mobileMenuBackdrop.removeClass('active');
+        $('body').removeClass('menu-open');
+        menuToggle.attr('aria-expanded', 'false');
+      }
+
+      function toggleMobileMenu() {
+        if (mobileMenu.hasClass('menu-opened')) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      }
 
       // Mobile menu improvements
       $('.js-fh5co-nav-toggle').on('click', function(e){
         if ($(window).width() < 992) {
+          e.preventDefault();
           e.stopPropagation();
-          mobileMenu.collapse('toggle');
+          toggleMobileMenu();
         }
-      });
-
-      mobileMenu.on('shown.bs.collapse', function() {
-        if ($(window).width() < 992) {
-          mobileMenuBackdrop.addClass('active');
-          $('body').addClass('menu-open');
-        }
-      });
-
-      mobileMenu.on('hidden.bs.collapse', function() {
-        mobileMenuBackdrop.removeClass('active');
-        $('body').removeClass('menu-open');
       });
 
       mobileMenuBackdrop.on('click', function() {
-        mobileMenu.collapse('hide');
+        closeMobileMenu();
       });
 
       // Handle same-page nav links consistently
@@ -1890,14 +1907,20 @@
         $('html, body').animate({ scrollTop: targetTop }, 450);
 
         if ($(window).width() < 992) {
-          mobileMenu.collapse('hide');
+          closeMobileMenu();
         }
       });
 
       // Close mobile menu when clicking outside
       $(document).on('click', function(e){
-        if (!$(e.target).closest('.navbar').length) {
-          mobileMenu.collapse('hide');
+        if ($(window).width() < 992 && !$(e.target).closest('.navbar, #mobile-menu-backdrop').length) {
+          closeMobileMenu();
+        }
+      });
+
+      $(window).on('resize', function() {
+        if ($(window).width() >= 992) {
+          closeMobileMenu();
         }
       });
     });
