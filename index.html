@@ -793,6 +793,29 @@
     color: #007bff !important;
   }
 
+  /*
+   * Hamburger: dark theme = white icon (style.css uses dark gray when .scrolled — invisible on black bar).
+   * Light theme = dark icon on light navbar.
+   */
+  body:not(.light-theme) .ftco-navbar-light .navbar-toggler,
+  body:not(.light-theme) .ftco-navbar-light.scrolled .navbar-toggler {
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    background: rgba(0, 0, 0, 0.25) !important;
+  }
+
+  body:not(.light-theme) .ftco-navbar-light .navbar-toggler .oi,
+  body:not(.light-theme) .ftco-navbar-light .navbar-toggler .oi-menu {
+    color: #ffffff !important;
+  }
+
+  body:not(.light-theme) .ftco-navbar-light .navbar-toggler:hover,
+  body:not(.light-theme) .ftco-navbar-light .navbar-toggler:focus {
+    color: #ffd700 !important;
+    border-color: rgba(255, 215, 0, 0.75) !important;
+    background: rgba(0, 0, 0, 0.45) !important;
+  }
+
   /* Hamburger icon fix for light mode */
   .light-theme .navbar-toggler {
     color: #212529 !important;
@@ -808,6 +831,12 @@
     background: rgba(255, 255, 255, 0.95) !important;
     border-width: 2px !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .light-theme .ftco-navbar-light.scrolled .navbar-toggler {
+    color: #212529 !important;
+    border-color: rgba(0, 0, 0, 0.45) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
   }
 
   .light-theme .navbar-toggler:hover {
