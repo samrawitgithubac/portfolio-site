@@ -3,7 +3,7 @@
   <head>
     <title>Samrawit Haileyesus Portfolio</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
     <meta name="description" content="Samrawit Haileyesus - Full-Stack Developer and Mobile App Developer portfolio">
     <meta name="keywords" content="Full-Stack Developer, Mobile App Developer, React, Node.js, React Native, Web Development">
     <meta name="author" content="Samrawit Haileyesus">
@@ -27,19 +27,29 @@
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-     <!-- Theme Toggle Button - Top Left Corner -->
-     <button class="theme-toggle-btn-fixed" id="theme-toggle" type="button" aria-label="Toggle theme">
-       <span class="theme-icon">🌙</span>
-     </button>
-
-
      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
      <div class="container">
        <a class="navbar-brand" href="index.html">Samrawit</a>
 
-      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="oi oi-menu"></span>
-       </button>
+       <div class="navbar-actions">
+         <button class="theme-toggle-btn-fixed" id="theme-toggle" type="button" aria-label="Switch to light theme">
+           <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+             <path d="M21 14.3A8.4 8.4 0 0 1 9.7 3 7.2 7.2 0 1 0 21 14.3z"></path>
+           </svg>
+           <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+             <circle cx="12" cy="12" r="4.2"></circle>
+             <path d="M12 2.5v2.2M12 19.3v2.2M4.7 4.7l1.6 1.6M17.7 17.7l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.7 19.3l1.6-1.6M17.7 6.3l1.6-1.6" fill="none"></path>
+           </svg>
+         </button>
+
+         <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="hamburger" aria-hidden="true">
+             <span></span>
+             <span></span>
+             <span></span>
+           </span>
+         </button>
+       </div>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
@@ -429,7 +439,43 @@
         </div>
       </div>
 
-      <!-- Project 2: Tenalink (Flagship SRHR Health Tech) -->
+      <!-- Project 2: WholeCase (Fintech & Multi-Lingual Web App) -->
+      <div class="col-md-6 col-lg-4 d-flex ftco-animate mb-4">
+        <div class="project-card">
+          <a href="https://whole-case.com/" target="_blank" rel="noopener noreferrer" class="project-card-media" aria-label="Visit WholeCase platform">
+            <img src="images/wholecase-project.png" alt="WholeCase - Multi-service Platform" class="project-card-img">
+            <span class="project-card-badge">Full-Stack App</span>
+            <div class="project-card-hover-overlay">
+              <span class="project-card-view-btn">
+                <span>Live Demo</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </span>
+            </div>
+          </a>
+          <div class="project-card-body">
+            <h3 class="project-card-title">
+              <a href="https://whole-case.com/" target="_blank" rel="noopener noreferrer">WholeCase</a>
+            </h3>
+            <p class="project-card-desc">
+              Contributed across frontend and backend using React, Firebase, and Supabase. Engineered Telebirr digital payment gateway integration, localized multilingual support, and real-time syncing.
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">Supabase</span>
+              <span class="project-tag">Telebirr</span>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://whole-case.com/" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                <span>Explore Live</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Tenalink (Flagship SRHR Health Tech) -->
       <div class="col-md-6 col-lg-4 d-flex ftco-animate mb-4">
         <div class="project-card">
           <a href="https://www.tenalink.org/" target="_blank" rel="noopener noreferrer" class="project-card-media" aria-label="Visit Tenalink website">
@@ -465,7 +511,7 @@
         </div>
       </div>
 
-      <!-- Project 3: HakimHub (Healthcare AI Platform) -->
+      <!-- Project 4: HakimHub (Healthcare AI Platform) -->
       <div class="col-md-6 col-lg-4 d-flex ftco-animate mb-4">
         <div class="project-card">
           <a href="https://hakimhub.app/" target="_blank" rel="noopener noreferrer" class="project-card-media" aria-label="Visit HakimHub healthcare app">
@@ -493,42 +539,6 @@
             </div>
             <div class="project-card-footer">
               <a href="https://hakimhub.app/" target="_blank" rel="noopener noreferrer" class="project-action-link">
-                <span>Explore Live</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4: WholeCase (Fintech & Multi-Lingual Web App) -->
-      <div class="col-md-6 col-lg-4 d-flex ftco-animate mb-4">
-        <div class="project-card">
-          <a href="https://whole-case.com/" target="_blank" rel="noopener noreferrer" class="project-card-media" aria-label="Visit WholeCase platform">
-            <img src="images/wholecase-project.png" alt="WholeCase - Multi-service Platform" class="project-card-img">
-            <span class="project-card-badge">Full-Stack App</span>
-            <div class="project-card-hover-overlay">
-              <span class="project-card-view-btn">
-                <span>Live Demo</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </span>
-            </div>
-          </a>
-          <div class="project-card-body">
-            <h3 class="project-card-title">
-              <a href="https://whole-case.com/" target="_blank" rel="noopener noreferrer">WholeCase</a>
-            </h3>
-            <p class="project-card-desc">
-              Contributed across frontend and backend using React, Firebase, and Supabase. Engineered Telebirr digital payment gateway integration, localized multilingual support, and real-time syncing.
-            </p>
-            <div class="project-card-tags">
-              <span class="project-tag">React</span>
-              <span class="project-tag">Firebase</span>
-              <span class="project-tag">Supabase</span>
-              <span class="project-tag">Telebirr</span>
-            </div>
-            <div class="project-card-footer">
-              <a href="https://whole-case.com/" target="_blank" rel="noopener noreferrer" class="project-action-link">
                 <span>Explore Live</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
@@ -890,41 +900,217 @@
     filter: brightness(1.2);
   }
 
+  /* Header actions stay on screen in the top-right */
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    position: fixed !important;
+    top: 12px !important;
+    right: 16px !important;
+    left: auto !important;
+    margin: 0 !important;
+    z-index: 4000 !important;
+    flex-shrink: 0;
+    transform: none !important;
+  }
+
+  #ftco-navbar .container {
+    width: 100% !important;
+    max-width: 1140px !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
   /* Theme Toggle Button */
   .theme-toggle-btn-fixed {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 215, 0, 0.2);
+    position: relative;
+    top: auto;
+    right: auto;
+    background: rgba(255, 215, 0, 0.18);
     border: 2px solid #ffd700;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.5rem;
-    z-index: 1000;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    z-index: 2101;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .theme-toggle-btn-fixed:hover,
   .theme-toggle-btn-fixed:active,
   .theme-toggle-btn-fixed:focus {
     background: rgba(255, 215, 0, 0.3);
-    transform: scale(1.05);
+    transform: none;
     outline: none;
   }
 
-  /* Better touch interaction for mobile */
-  .theme-toggle-btn-fixed {
+  .theme-toggle-btn-fixed:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.35);
+  }
+
+  .theme-icon {
+    width: 20px;
+    height: 20px;
+    display: none;
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+
+  .theme-icon-moon {
+    display: block !important;
+    fill: #ffd700;
+  }
+
+  .theme-icon-sun {
+    display: none !important;
+    fill: none;
+    stroke: #b8860b;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+
+  .theme-icon-sun circle {
+    fill: #b8860b;
+    stroke: none;
+  }
+
+  .light-theme .theme-icon-moon {
+    display: none !important;
+  }
+
+  .light-theme .theme-icon-sun {
+    display: block !important;
+  }
+
+  /* CSS hamburger that turns into an X */
+  .navbar-toggler {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 12px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 215, 0, 0.5) !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    z-index: 2101;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
   }
 
-  .theme-icon {
-    transition: transform 0.3s ease;
+  .navbar-toggler .hamburger,
+  .navbar-toggler .hamburger span {
+    pointer-events: none;
+  }
+
+  #ftco-navbar.ftco-navbar-light .navbar-toggler,
+  #ftco-navbar.ftco-navbar-light.scrolled .navbar-toggler {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    letter-spacing: 0 !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    text-transform: none !important;
+  }
+
+  .hamburger {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 14px;
+  }
+
+  .hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: #ffffff;
+    transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease;
+  }
+
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 6px; }
+  .hamburger span:nth-child(3) { top: 12px; }
+
+  .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
+    top: 6px;
+    transform: rotate(45deg);
+  }
+
+  .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
+    top: 6px;
+    transform: rotate(-45deg);
+  }
+
+  @media (min-width: 992px) {
+    #ftco-navbar .navbar-brand {
+      order: 1;
+    }
+
+    #ftco-navbar .navbar-collapse {
+      order: 2;
+      flex-grow: 1;
+    }
+
+    #ftco-navbar .navbar-actions {
+      top: 16px;
+      right: 20px;
+    }
+
+    .navbar-toggler {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .navbar-toggler {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #ftco-navbar .container {
+      flex-wrap: nowrap !important;
+      justify-content: space-between !important;
+    }
+
+    #ftco-navbar .navbar-actions {
+      top: 10px;
+      right: 10px;
+    }
+
+    #ftco-navbar .theme-toggle-btn-fixed {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
   }
 
   /* CSS Variables for Theme */
@@ -1073,60 +1259,39 @@
     color: #007bff !important;
   }
 
-  /*
-   * Hamburger: dark theme = white icon (style.css uses dark gray when .scrolled — invisible on black bar).
-   * Light theme = dark icon on light navbar.
-   */
   body:not(.light-theme) .ftco-navbar-light .navbar-toggler,
   body:not(.light-theme) .ftco-navbar-light.scrolled .navbar-toggler {
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.45) !important;
-    background: rgba(0, 0, 0, 0.25) !important;
+    border: 1px solid rgba(255, 215, 0, 0.5) !important;
+    background: rgba(0, 0, 0, 0.35) !important;
   }
 
-  body:not(.light-theme) .ftco-navbar-light .navbar-toggler .oi,
-  body:not(.light-theme) .ftco-navbar-light .navbar-toggler .oi-menu {
-    color: #ffffff !important;
+  body:not(.light-theme) .hamburger span {
+    background: #ffffff !important;
   }
 
   body:not(.light-theme) .ftco-navbar-light .navbar-toggler:hover,
   body:not(.light-theme) .ftco-navbar-light .navbar-toggler:focus {
-    color: #ffd700 !important;
-    border-color: rgba(255, 215, 0, 0.75) !important;
-    background: rgba(0, 0, 0, 0.45) !important;
+    border-color: rgba(255, 215, 0, 0.85) !important;
+    background: rgba(0, 0, 0, 0.5) !important;
   }
 
-  /* Hamburger icon fix for light mode */
-  .light-theme .navbar-toggler {
-    color: #212529 !important;
-    border-color: #212529 !important;
-  }
-
-  .light-theme .oi {
-    color: #212529 !important;
-  }
-
-  .light-theme .navbar-toggler {
-    border-color: rgba(0, 0, 0, 0.6) !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-width: 2px !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  }
-
+  .light-theme .navbar-toggler,
   .light-theme .ftco-navbar-light.scrolled .navbar-toggler {
     color: #212529 !important;
-    border-color: rgba(0, 0, 0, 0.45) !important;
-    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(184, 134, 11, 0.55) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
   }
 
-  .light-theme .navbar-toggler:hover {
-    background: rgba(255, 255, 255, 1) !important;
-    border-color: rgba(0, 0, 0, 0.8) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+  .light-theme .hamburger span {
+    background: #212529 !important;
   }
 
-  .light-theme .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  .light-theme .navbar-toggler:hover,
+  .light-theme .navbar-toggler:focus {
+    background: #ffffff !important;
+    border-color: #8b6914 !important;
   }
 
   /* Light Theme Text Color Fixes */
@@ -1190,17 +1355,22 @@
   }
 
   /* Mobile navbar brand responsive */
-  @media (max-width: 991px) {
+  @media (max-width: 991.98px) {
     .navbar-brand {
-      font-size: 1.5rem;
-      margin-left: 10px;
+      font-size: 1.35rem;
+      margin-left: 0;
+      padding-right: 8px;
+      max-width: calc(100% - 108px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 
   @media (max-width: 576px) {
     .navbar-brand {
-      font-size: 1.3rem;
-      margin-left: 5px;
+      font-size: 1.2rem;
+      margin-left: 0;
     }
   }
 
@@ -1370,52 +1540,81 @@
     filter: brightness(1.2) hue-rotate(30deg);
   }
 
-  /* Light theme toggle button */
   .light-theme .theme-toggle-btn-fixed {
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
     border-color: #b8860b !important;
-    border-width: 3px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
   }
 
-  .light-theme .theme-toggle-btn-fixed:hover {
-    background: rgba(255, 255, 255, 1) !important;
+  .light-theme .theme-toggle-btn-fixed,
+  .light-theme .theme-toggle-btn-fixed *,
+  .light-theme .navbar-toggler,
+  .light-theme .navbar-toggler * {
+    color: unset !important;
+  }
+
+  .light-theme .theme-toggle-btn-fixed:hover,
+  .light-theme .theme-toggle-btn-fixed:focus {
+    background: #ffffff !important;
     border-color: #8b6914 !important;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
-    color: #8b6914 !important;
-  }
-
-  .light-theme .theme-icon {
-    color: #b8860b !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
   }
 
   /* Contact section responsive adjustments for 4 items */
-  @media (max-width: 991px) {
+  @media (max-width: 991.98px) {
     .contact-info .col-md-6 {
       margin-bottom: 20px;
     }
   }
 
-  /* Extra small mobile devices */
   @media (max-width: 360px) {
-    .theme-toggle-btn-fixed {
-      width: 40px;
-      height: 40px;
-      font-size: 1.1rem;
-      top: 8px;
-      right: 8px;
+    .navbar-brand {
+      font-size: 1.15rem !important;
     }
   }
 
   /* Improved mobile navbar spacing */
-  @media (max-width: 991px) {
-    .navbar {
-      padding: 1rem 0;
+  @media (max-width: 991.98px) {
+    #ftco-navbar.navbar,
+    #ftco-navbar.ftco-navbar-light,
+    #ftco-navbar.ftco-navbar-light.scrolled {
+      padding: calc(8px + env(safe-area-inset-top, 0px)) 0 8px !important;
+      min-height: 64px;
+      width: 100% !important;
+      max-width: 100% !important;
+      left: 0 !important;
+      right: 0 !important;
+      box-sizing: border-box !important;
     }
-    
+
+    #ftco-navbar .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      flex-wrap: nowrap !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+    }
+
+    #ftco-navbar #ftco-nav.navbar-collapse {
+      position: fixed !important;
+      top: 64px !important;
+      right: 0 !important;
+      left: auto !important;
+      width: min(320px, 86vw) !important;
+      height: calc(100vh - 64px) !important;
+    }
+
     .navbar-brand {
-      font-size: 1.6rem;
+      font-size: 1.25rem;
+      margin-right: 8px;
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: calc(100vw - 120px);
+      padding-right: 0;
     }
   }
 
@@ -1480,7 +1679,7 @@
   }
 
   /* Ensure all text elements have proper contrast in light mode */
-  .light-theme * {
+  .light-theme *:not(.theme-toggle-btn-fixed):not(.theme-icon):not(.navbar-toggler):not(.hamburger) {
     color: inherit !important;
   }
 
@@ -1504,14 +1703,22 @@
   }
 
   /* Mobile Navigation Improvements */
-  @media (max-width: 991px) {
+  @media (max-width: 991.98px) {
     /* Leave the drawer strip uncovered so taps always hit links (not the dim layer) */
+    html, body {
+      overflow-x: hidden;
+    }
+
+    .navbar-actions {
+      z-index: 4000 !important;
+    }
+
     .mobile-menu-backdrop {
       position: fixed;
-      top: 0;
+      top: 64px;
       bottom: 0;
       left: 0;
-      right: min(320px, 84vw);
+      right: min(320px, 86vw);
       background: rgba(0, 0, 0, 0.45);
       opacity: 0;
       visibility: hidden;
@@ -1536,16 +1743,17 @@
     }
 
     .navbar-nav {
-      background: rgba(0, 0, 0, 0.95);
-      padding: 96px 22px 28px;
+      background: rgba(0, 0, 0, 0.96);
+      padding: 20px 18px 32px;
       border-radius: 0;
       margin-top: 0;
       margin-right: 0;
       backdrop-filter: blur(10px);
       max-width: 100%;
       width: 100%;
-      min-height: 100vh;
+      min-height: calc(100vh - 64px);
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .navbar-nav .nav-item {
@@ -1563,6 +1771,9 @@
       cursor: pointer;
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
     }
 
     .navbar-nav .nav-link:hover {
@@ -1571,11 +1782,12 @@
     }
 
     .navbar-collapse {
-      position: fixed;
-      top: 0;
+      position: fixed !important;
+      top: 64px;
       right: 0;
-      width: min(320px, 84vw);
-      height: 100vh;
+      left: auto;
+      width: min(320px, 86vw);
+      height: calc(100vh - 64px);
       padding-top: 0;
       z-index: 1200;
       display: block !important;
@@ -1596,7 +1808,7 @@
     }
 
     .navbar-collapse.collapsing {
-      height: 100vh !important;
+      height: calc(100vh - 64px) !important;
       transition: transform 0.3s ease, opacity 0.3s ease !important;
     }
 
@@ -1633,66 +1845,13 @@
     }
   }
 
-  /* Responsive theme toggle */
   @media (max-width: 768px) {
+    .theme-toggle-btn-fixed,
     .navbar-toggler {
-      position: relative;
-      z-index: 2002;
-      margin-right: 0;
-      margin-top: 10px;
-    }
-
-    .theme-toggle-btn-fixed {
-      width: 40px;
-      height: 40px;
-      font-size: 1rem;
-      top: 18px;
-      right: 72px;
-      border-width: 2px;
-      z-index: 2001;
-      background: rgba(0, 0, 0, 0.72);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
-    }
-
-    .light-theme .theme-toggle-btn-fixed {
-      background: rgba(255, 255, 255, 0.98) !important;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16) !important;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .theme-toggle-btn-fixed {
-      width: 38px;
-      height: 38px;
-      font-size: 0.95rem;
-      top: 17px;
-      right: 66px;
-      border-width: 2px;
-      z-index: 2001;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .theme-toggle-btn-fixed {
-      width: 36px;
-      height: 36px;
-      font-size: 0.9rem;
-      top: 15px;
-      right: 60px;
-      border-width: 2px;
-      z-index: 2001;
-    }
-  }
-
-  @media (max-width: 360px) {
-    .theme-toggle-btn-fixed {
-      width: 34px;
-      height: 34px;
-      font-size: 0.85rem;
-      top: 13px;
-      right: 56px;
-      border-width: 2px;
-      z-index: 2001;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
     }
   }
 
@@ -1932,15 +2091,16 @@
 
   @media (max-width: 767.98px) {
     #home-section .text {
-      padding: 0 8px;
+      padding: 0 18px;
     }
 
     #home-section h1 {
-      font-size: 1.85rem !important;
+      font-size: 1.7rem !important;
     }
 
     #home-section h2 {
-      font-size: 1.08rem !important;
+      font-size: 1rem !important;
+      padding: 0 4px;
     }
 
     #home-section h1 .hero-intro {
@@ -1949,8 +2109,15 @@
     }
 
     #home-section h1 .hero-name {
-      font-size: 2.25rem !important;
-      line-height: 1.05;
+      font-size: 1.7rem !important;
+      line-height: 1.15;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    #home-section p {
+      font-size: 0.95rem !important;
+      padding: 0 4px;
     }
 
     #home-section .btn,
@@ -1983,6 +2150,22 @@
     .ftco-hireme h2 {
       font-size: 2.05rem !important;
     }
+
+    img,
+    video,
+    iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .navbar-actions {
+      gap: 6px;
+    }
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 </style>
 
@@ -2160,62 +2343,38 @@
     // Theme toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
       const themeToggle = document.getElementById('theme-toggle');
-      const themeIcon = document.querySelector('.theme-icon');
       const body = document.body;
 
-      // Check for saved theme preference or default to dark
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-
-      // Apply the saved theme
-      if (savedTheme === 'light') {
-        body.classList.add('light-theme');
-        themeIcon.textContent = '☀️';
-      } else {
-        body.classList.remove('light-theme');
-        themeIcon.textContent = '🌙';
-      }
-
-      // Toggle theme on button click
-      themeToggle.addEventListener('click', function() {
-        if (body.classList.contains('light-theme')) {
-          // Switch to dark theme
-          body.classList.remove('light-theme');
-          themeIcon.textContent = '🌙';
-          localStorage.setItem('theme', 'dark');
-        } else {
-          // Switch to light theme
-          body.classList.add('light-theme');
-          themeIcon.textContent = '☀️';
-          localStorage.setItem('theme', 'light');
+      function applyTheme(theme) {
+        const isLight = theme === 'light';
+        body.classList.toggle('light-theme', isLight);
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
         }
-
-        // Add a nice animation effect
-        themeToggle.style.transform = 'rotate(360deg)';
-        setTimeout(() => {
-          themeToggle.style.transform = 'rotate(0deg)';
-        }, 300);
-      });
-
-      // Optional: Auto-detect user's system theme preference
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches && !localStorage.getItem('theme')) {
-        body.classList.add('light-theme');
-        themeIcon.textContent = '☀️';
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem('theme', theme);
       }
 
-      // Listen for system theme changes
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      applyTheme(savedTheme);
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const nextTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+          applyTheme(nextTheme);
+        });
+      }
+
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches && !localStorage.getItem('theme')) {
+        applyTheme('light');
+      }
+
       window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
         if (!localStorage.getItem('theme')) {
-          if (e.matches) {
-            body.classList.add('light-theme');
-            themeIcon.textContent = '☀️';
-          } else {
-            body.classList.remove('light-theme');
-            themeIcon.textContent = '🌙';
-          }
+          applyTheme(e.matches ? 'light' : 'dark');
         }
       });
-
     });
 
     $(function() {
@@ -2274,6 +2433,12 @@
         $('html, body').stop(true).animate({ scrollTop: targetTop }, 450);
 
         if ($(window).width() < 992) {
+          closeMobileMenu();
+        }
+      });
+
+      $(document).on('keydown', function(e) {
+        if (e.key === 'Escape') {
           closeMobileMenu();
         }
       });

@@ -8188,9 +8188,10 @@ h1, h2, h3, h4, h5,
       z-index: 1030;
       padding: 0.5rem 1rem; } }
   .ftco-navbar-light .container {
-    width: 1110px;
+    width: 100%;
+    max-width: 1110px;
     margin: 0 auto;
-    padding: 0; }
+    padding: 0 15px; }
   .ftco-navbar-light .navbar-brand {
     color: #fff;
     padding-top: .7rem;
